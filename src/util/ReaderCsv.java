@@ -20,7 +20,7 @@ public class ReaderCsv {
     String sourceFileOcorrencia = "src\\ocorrencia.csv";
 
 
-    public void lerarquivoAeronave() {
+    public List<Aeronave> lerarquivoAeronave() {
 
 
         try (BufferedReader br = new BufferedReader(new FileReader(sourceFileAero))) {
@@ -40,12 +40,13 @@ public class ReaderCsv {
                 aeronaves.add(aeronave);
                 line = br.readLine();
             }
-            for (Aeronave aeronave : aeronaves) {
+            /*for (Aeronave aeronave : aeronaves) {
                 System.out.println(aeronave.toString());
-            }
+            }*/
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return aeronaves;
 
     }
 
@@ -65,7 +66,7 @@ public class ReaderCsv {
                         field[2],
                         field[3],
                         field[4],
-                        field[8]
+                        field[7]
                 );
                 ocorrencias.add(ocorrencia);
                 line = bw.readLine();
