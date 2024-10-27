@@ -1,4 +1,4 @@
-#Projeto do modulo de técnicas de Programação I
+# Projeto do modulo de técnicas de Programação I
 
 Este projeto é uma aplicação para analisar dados de um arquivo csv, com aplicação dos conceitos estudados de programação funcional, como Interfaces funcionais, stream e leitura de arquivos. E através das informações analisadas consegui responder algumas perguntas. 
 
