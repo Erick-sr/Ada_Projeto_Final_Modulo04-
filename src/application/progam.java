@@ -5,11 +5,12 @@ import entities.Ocorrencia;
 import services.AnaliseDeDados;
 import util.ReaderCsv;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class progam {
     public static void main(String[] args) {
+
         ReaderCsv reader = new ReaderCsv();
 
         List<Ocorrencia> ocorrencias = reader.lerArquivoOcorrencia();
@@ -17,16 +18,16 @@ public class progam {
 
         AnaliseDeDados analise = new AnaliseDeDados(ocorrencias, aeronaves);
 
-        //leitor.lerarquivoAeronave();
-        //reader.lerArquivoOcorrencia();
-        System.out.printf("Causas mais comum de Ocorrencia  %n %s",  analise.causasMaisComuns());
+        
+        System.out.printf("Causas mais comum de Ocorrência  %n %s", analise.causasMaisComuns());
         System.out.println();
-        System.out.printf("Ocorrencia por aeronaves  %n %s ", analise.ocorrenciaPorAeronave());
+        System.out.printf("%n Ocorrência por aeronaves  %n %s ", analise.ocorrenciaPorAeronave());
         System.out.println();
-        System.out.printf("Ocorrencia por Estado %n %s", analise.ocorrenciaPorEstado());
+        System.out.printf("%n Ocorrência por Estado %n %s", analise.ocorrenciaPorEstado());
         System.out.println();
-        System.out.printf("Número ocorrencia por ano %n %s",analise.ocorrenciaPorAno());
-
+        System.out.printf("%n Número ocorrência por ano %n %s", analise.ocorrenciaPorAno());
+        System.out.println();
+        System.out.printf("%n Número de ocorrência por Fabricante %n %s", analise.ocorrenciaPorFabricante());
 
     }
 }

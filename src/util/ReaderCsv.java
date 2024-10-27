@@ -3,16 +3,13 @@ package util;
 import entities.Aeronave;
 import entities.Ocorrencia;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderCsv {
-
-
-
-
-
     List<Aeronave> aeronaves = new ArrayList<Aeronave>();
     List<Ocorrencia> ocorrencias = new ArrayList<Ocorrencia>();
 
@@ -21,8 +18,6 @@ public class ReaderCsv {
 
 
     public List<Aeronave> lerarquivoAeronave() {
-
-
         try (BufferedReader br = new BufferedReader(new FileReader(sourceFileAero))) {
             String line = br.readLine();
             line = br.readLine();
@@ -40,18 +35,14 @@ public class ReaderCsv {
                 aeronaves.add(aeronave);
                 line = br.readLine();
             }
-            /*for (Aeronave aeronave : aeronaves) {
-                System.out.println(aeronave.toString());
-            }*/
         } catch (IOException e) {
             e.printStackTrace();
         }
         return aeronaves;
-
     }
 
-    public  List<Ocorrencia> lerArquivoOcorrencia(){
-        try(BufferedReader bw = new BufferedReader(new FileReader(sourceFileOcorrencia))){
+    public List<Ocorrencia> lerArquivoOcorrencia() {
+        try (BufferedReader bw = new BufferedReader(new FileReader(sourceFileOcorrencia))) {
 
             String line = bw.readLine();
             line = bw.readLine();
@@ -72,13 +63,12 @@ public class ReaderCsv {
                 line = bw.readLine();
             }
 
-            //for (Ocorrencia ocorrencia : ocorrencias) {
-              //  System.out.println(ocorrencia.toString());
 
-            //}
-
-        }catch(IOException e){e.printStackTrace();}
-            return ocorrencias;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ocorrencias;
 
 
-    }}
+    }
+}
