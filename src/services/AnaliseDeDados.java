@@ -61,6 +61,24 @@ public class AnaliseDeDados {
     public Map<String, Long> ocorrenciaPorFabricante() {
         return aeronaves.stream().collect(Collectors.groupingBy(Aeronave::getFabricante, Collectors.counting()));
     }
+
+    public Map<String, Long> ocorrenciaPorCategoria() {
+        return aeronaves.stream().collect(Collectors.groupingBy(Aeronave::getCategoriaAviacao, Collectors.counting()));
+    }
+
+    public long ocorrenciaComFatalidade() {
+        return aeronaves.stream().mapToLong(Aeronave::getQuantidadeDeFatalidade).sum();
+    }
+
+    public Map<String, Long> fatalidadePorAno() {
+
+        Map<Integer, String> anoDaOcorrencia = ocorrencias.stream()
+                .collect(Collectors.toMap(Ocorrencia::getCodigoOcorrencia, Ocorrencia::getAnoOcorrencia));
+
+        return aeronaves.stream().filter(aeronave -> anoDaOcorrencia.containsKey(aeronave.getCodigoOcorrencia()))
+                .collect(Collectors.groupingBy(aeronave -> anoDaOcorrencia.get(aeronave.getCodigoOcorrencia()),
+                        Collectors.summingLong(Aeronave::getQuantidadeDeFatalidade)));
+    }
 }
 
 

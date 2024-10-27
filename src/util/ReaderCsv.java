@@ -21,9 +21,12 @@ public class ReaderCsv {
         try (BufferedReader br = new BufferedReader(new FileReader(sourceFileAero))) {
             String line = br.readLine();
             line = br.readLine();
+
             while (line != null) {
                 String[] field = line.split(",");
+
                 int quantidadeFatalidades = (field[20] == null || field[20].isEmpty() || field[20].equalsIgnoreCase("NULL")) ? 0 : Integer.parseInt(field[20]);
+
                 Aeronave aeronave = new Aeronave(
                         Integer.parseInt(field[0]),
                         Integer.parseInt(field[1]),
@@ -31,7 +34,8 @@ public class ReaderCsv {
                         field[5],
                         field[6],
                         field[18],
-                        quantidadeFatalidades);
+                        quantidadeFatalidades,
+                        field[14]);
                 aeronaves.add(aeronave);
                 line = br.readLine();
             }
@@ -68,7 +72,6 @@ public class ReaderCsv {
             e.printStackTrace();
         }
         return ocorrencias;
-
 
     }
 }

@@ -7,7 +7,8 @@ public class Aeronave {
     private String fabricante; //[6]
     private String modelo; //[7]
     private String tipoOperacao;//[19]
-    private int quantidadeDeFatalidade; //[20]
+    private int quantidadeDeFatalidade;
+    private String categoriaAviacao;//[20]
 
     public Aeronave(int codigoAeronave,
                     int codigoOcorrencia,
@@ -15,7 +16,8 @@ public class Aeronave {
                     String fabricante,
                     String modelo,
                     String tipoOperacao,
-            Integer quantidadeDeFatalidade){
+                    Integer quantidadeDeFatalidade,
+                    String categoriaAviacao) {
         super();
         this.codigoAeronave = codigoAeronave;
         this.codigoOcorrencia = codigoOcorrencia;
@@ -24,6 +26,7 @@ public class Aeronave {
         this.modelo = modelo;
         this.tipoOperacao = tipoOperacao;
         this.quantidadeDeFatalidade = quantidadeDeFatalidade;
+        this.categoriaAviacao = categoriaAviacao;
     }
 
     public Integer getCodigoAeronave() {
@@ -80,6 +83,18 @@ public class Aeronave {
 
     public void setCodigoOcorrencia(Integer codigoOcorrencia) {
         this.codigoOcorrencia = codigoOcorrencia;
+    }
+
+    public void setQuantidadeDeFatalidade(int quantidadeDeFatalidade) {
+        this.quantidadeDeFatalidade = quantidadeDeFatalidade;
+    }
+
+    public String getCategoriaAviacao() {
+        return categoriaAviacao;
+    }
+
+    public void setCategoriaAviacao(String categoriaAviacao) {
+        this.categoriaAviacao = categoriaAviacao;
     }
 
     @Override

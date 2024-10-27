@@ -65,14 +65,18 @@ public class Ocorrencia {
         this.classificacao = classificacao;
     }
 
+    public String getAnoOcorrencia() {
+        return diaOcorrencia != null && diaOcorrencia.length() >= 4 ? diaOcorrencia.substring(0, 4) : "Indefinido";
+    }
+
     @Override
     public String toString() {
         return
                 "codigoOcorrencia=" + codigoOcorrencia +
-                ", classificacao= " + classificacao  +
-                ", tipo= " + tipo +
-                ", localidade= " + localidade +
-                ", uf='" + uf +
-                ", diaOcorrencia='" + diaOcorrencia ;
+                        ", classificacao= " + classificacao +
+                        ", tipo= " + tipo +
+                        ", localidade= " + localidade +
+                        ", uf='" + uf +
+                        ", diaOcorrencia='" + diaOcorrencia;
     }
 }

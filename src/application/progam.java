@@ -18,7 +18,7 @@ public class progam {
 
         AnaliseDeDados analise = new AnaliseDeDados(ocorrencias, aeronaves);
 
-        
+
         System.out.printf("Causas mais comum de Ocorrência  %n %s", analise.causasMaisComuns());
         System.out.println();
         System.out.printf("%n Ocorrência por aeronaves  %n %s ", analise.ocorrenciaPorAeronave());
@@ -28,6 +28,12 @@ public class progam {
         System.out.printf("%n Número ocorrência por ano %n %s", analise.ocorrenciaPorAno());
         System.out.println();
         System.out.printf("%n Número de ocorrência por Fabricante %n %s", analise.ocorrenciaPorFabricante());
+        System.out.println();
+        System.out.printf("%n Número de ocorrência por Categoria %n %s", analise.ocorrenciaPorCategoria());
+        System.out.println();
+        System.out.printf("%n Número de fatalidade  %n %s", analise.fatalidadePorAno());
+        System.out.println();
+        System.out.printf("%n Número de fatalidade  %n %s", analise.ocorrenciaComFatalidade());
 
     }
 }
